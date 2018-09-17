@@ -16,18 +16,23 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'home.html'));
-});
 
-app.get('/survey', function (req, res) {
-    res.sendFile(path.join(__dirname, 'survey.html'));
-});
+require ( "./routes/apiRoutes") (app);
+require ("./routes/htmlRoutes")(app);
 
-// api Tables List
-app.get('/api/friends-list', function (req, res) {
-    return res.json(friends-list);
-});
+
+// app.get('/', function (req, res) {
+//     res.sendFile(path.join(__dirname, 'home.html'));
+// });
+
+// app.get('/survey', function (req, res) {
+//     res.sendFile(path.join(__dirname, 'survey.html'));
+// });
+
+// // api Tables List
+// app.get('/api/friends-list', function (req, res) {
+//     return res.json(friends-list);
+// });
 
 
 
