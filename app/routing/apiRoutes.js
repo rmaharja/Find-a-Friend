@@ -1,5 +1,18 @@
-var tableData = require("../data/friends.js");
+var friendsData = require("../data/friendsData");
 
-app.get("/api/friends", function(req,res){
+module.exports = function (apps){
+
+  // Setting up route for api
+app.get("/api/friendsData", function(req,res){
   res.json(friendsData);
+});
+
+app.post ("/api/friendsData", function (req, res){
+  res.json
 })
+
+
+
+
+// End module exports
+}

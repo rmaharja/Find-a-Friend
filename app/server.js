@@ -1,7 +1,7 @@
 // boilerplate
 var express = require("express");
 var bodyParser = require("body-parser");
-var path = require("path");
+// var path = require("path");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -10,15 +10,13 @@ var PORT = process.env.PORT || 3000;
 app.use= applying to everything (put, get...)
 .use= passing middleware
 */
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 
 
-require ( "./routes/apiRoutes") (app);
-require ("./routes/htmlRoutes")(app);
+require ( "./app/routing/apiRoutes") (app);
+require ("./app/routing/htmlRoutes")(app);
 
 
 // app.get('/', function (req, res) {
