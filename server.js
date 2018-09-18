@@ -1,4 +1,5 @@
 // boilerplate
+console.log ("Starting Server...")
 var express = require("express");
 var bodyParser = require("body-parser");
 // var path = require("path");
@@ -14,24 +15,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 
+// Sets the html and api routes.
+require ("./app/routing/apiRoutes") (app);
 
-require ( "./app/routing/apiRoutes") (app);
 require ("./app/routing/htmlRoutes")(app);
-
-
-// app.get('/', function (req, res) {
-//     res.sendFile(path.join(__dirname, 'home.html'));
-// });
-
-// app.get('/survey', function (req, res) {
-//     res.sendFile(path.join(__dirname, 'survey.html'));
-// });
-
-// // api Tables List
-// app.get('/api/friends-list', function (req, res) {
-//     return res.json(friends-list);
-// });
-
 
 
 
